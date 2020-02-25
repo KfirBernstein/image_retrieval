@@ -1,7 +1,7 @@
 Summary:
 
-In this project I've implemented the model presented in the Deep Learning
-of Binary Hash Codes for Fast Image Retrieval paper.
+In this project I've implemented the model presented in [Deep Learning
+of Binary Hash Codes for Fast Image Retrieval] (https://www.iis.sinica.edu.tw/~kevinlin311.tw/cvprw15.pdf).
 
 In addition to the paper, I've Implemented the model using several
 transfer learning nets and then I examined the differences between the
