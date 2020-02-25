@@ -1,6 +1,6 @@
 Summary:
 
-In this project I implemented the model presented in the Deep Learning
+In this project I've implemented the model presented in the Deep Learning
 of Binary Hash Codes for Fast Image Retrieval paper.
 
 In addition to the paper, I've Implemented the model using several
