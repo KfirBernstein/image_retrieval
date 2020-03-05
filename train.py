@@ -100,7 +100,7 @@ if __name__ == '__main__':
         net.cuda()
     softmaxloss = nn.CrossEntropyLoss().cuda()
     optimizer = torch.optim.SGD(net.parameters(), lr=args.lr, momentum=args.momentum, weight_decay=0.0005)
-    scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=[64], gamma=0.1)
+    scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=[25], gamma=0.1)
     for epoch in range(start_epoch, start_epoch + args.epoch):
         train(epoch)
         test(epoch)

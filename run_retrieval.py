@@ -45,6 +45,7 @@ def binary_output(dataloader):
         net = my_net_type_2(args.bits,args.mid)
     net.load_state_dict(torch.load('./{}/{}'.format(args.path, args.name)))
     use_cuda = torch.cuda.is_available()
+    print (use_cuda)
     if use_cuda:
         net.cuda()
     full_batch_output = torch.cuda.FloatTensor()
@@ -102,7 +103,7 @@ def precision(train_binary, train_label, test_binary, test_label):
     precision_at_k = sum_tp / num_samples / num_queries
     index = [100, 200, 400, 600, 800, 1000]
     index = [i - 1 for i in index]
-    print('precision at k:', precision_at_k[index])
+    print('precision@k:', precision_at_k[index])
     np.save(args.path+'/precision_at_k', precision_at_k)
     np.save(args.path + '/AP_per_query', AP)
     map = np.mean(AP)
@@ -119,6 +120,7 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
     args.path = args.path+'model_'+args.mid+'_'+str(args.batch)
+    print (args.path)
     if os.path.exists(args.path+'/result/train_binary') and os.path.exists(args.path+'/result/train_label') and \
        os.path.exists(args.path+'/result/test_binary') and os.path.exists(args.path+'/result/test_label'):
         train_binary = torch.load(args.path+'/result/train_binary')
